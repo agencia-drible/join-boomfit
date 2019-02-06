@@ -268,35 +268,65 @@
                                 <hr>
                           </div>
                           <div class="section-content">
-                            <div class="form-group">
-                              <input type="text" name="name" class="form-control" placeholder="Nombre" required="required" id="name">
-                            </div>
-                            <div class="form-group">
-                              <input type="text"  name="email" class="form-control" placeholder="E-mail" id="email">
-                            </div>
-                            <div class="form-group">
-                              <input type="text" name="phone" class="form-control" placeholder="Móvil"  id="phone-number">
-                            </div>
-                            <div class="form-group">
-                              <select name="location" class="form-control" required="required" id="city-id"><option value="">Lugar</option></select>
-                            </div>
-                            <div class="form-group">
-                              <div class="input text required"><input type="text" name="message" class="form-control" placeholder="Escriba aquí su mensaje" required="required" id="custom-data"></div>
-                            </div>
-                            <p class="consent-copy">Sus datos personales serán tratados por la entidad World Fit Online Lda, a efectos comerciales, hasta 60 días después de la validez de la promoción.</p>
-                            <p class="consent-copy">Estoy de acuerdo en contactar con la empresa World Fit Online, para enviar sus informaciones, ofertas y promociones, durante 24 meses o 24 meses después del último contacto, a través de:</p>
-                            <div class="input checkbox">
-                              <input type="hidden" name="consent_email" value="0">
-                              <label for="lead-opt-in-email">
-                              <input type="checkbox" name="consent_email" value="1" id="lead-opt-in-email">EMAIL</label>
-                            </div>
-                            <div class="input checkbox">
-                              <input type="hidden" name="consent_sms" value="0">
-                              <label for="lead-opt-in-sms"><input type="checkbox" name="consent_sms" value="1" id="lead-opt-in-sms">SMS</label>
-                            </div>
-                            <div class="form-group mt-25">
-                              <button type="submit" class="btn btn-color upper">¡Enviar mensaje!<i class="fa fa-angle-right"></i></button>
+                            {% macro errorList(errors) %}
+                            {% if errors %}
+                            <ul class="errors">
+                              {% for error in errors %}
+                              <li>{{ error }}</li>
+                              {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {% endmacro %}
+
+                            {% from _self import errorList %}
+
+                            {% if craft.app.request.getParam('sent') %}
+                            <p class="callout success">
+                              Mensagem enviada com sucesso.
+                            </p>
+                            {% endif %}
+                            <form method="post" action="" accept-charset="UTF-8">
+                              <div class="form-group">
+                                {{ csrfInput() }}
+                                <input type="hidden" name="action" value="contact-form/send">
+                                {{ redirectInput('/es') }}
+                                <input type="text" name="fromName" class="form-control" placeholder="Nombre" required="required" id="name" value="{{ message.fromName ?? '' }}">
+                                {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
                               </div>
+                              <div class="form-group">
+                                <input type="email"  name="fromEmail" class="form-control" placeholder="E-mail" id="email" value="{{ message.fromEmail ?? '' }}">
+                                {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+                              </div>
+                              <div class="form-group">
+                                <input type="text" name="fromPhone" class="form-control" placeholder="Móvil"  id="phone-number" value="{{ message.fromPhone ?? '' }}">
+                                {{ message is defined and message ? errorList(message.getErrors('fromPhone')) }}
+                              </div>
+                              <div class="form-group">
+                                <select name="location" class="form-control" required="required" id="city-id" value="{{ message.fromLocal ?? '' }}"><option>Lugar</option>
+                                  <option value="">Porto</option>
+                                  <option value="">Braga</option>
+                                  <option value="">Lisboa</option>
+                                </select>
+                                {{ message is defined and message ? errorList(message.getErrors('fromLocal')) }}
+                              </div>
+                              <div class="form-group">
+                                <div class="input text required"><textarea type="text" name="message" class="form-control" placeholder="Escriba aquí su mensaje" required="required" id="custom-data">{{ message.message ?? '' }}</textarea></div>
+                                {{ message is defined and message ? errorList(message.getErrors('message')) }}
+                              </div>
+                              <p class="consent-copy">Sus datos personales serán tratados por la entidad World Fit Online Lda, a efectos comerciales, hasta 60 días después de la validez de la promoción.</p>
+                              <p class="consent-copy">Estoy de acuerdo en contactar con la empresa World Fit Online, para enviar sus informaciones, ofertas y promociones, durante 24 meses o 24 meses después del último contacto, a través de:</p>
+                              <div class="input checkbox">
+                                <input type="hidden" name="consent_email" value="0">
+                                <label for="lead-opt-in-email">
+                                  <input type="checkbox" name="consent_email" value="1" id="lead-opt-in-email">EMAIL</label>
+                                </div>
+                                <div class="input checkbox">
+                                  <input type="hidden" name="consent_sms" value="0">
+                                  <label for="lead-opt-in-sms"><input type="checkbox" name="consent_sms" value="1" id="lead-opt-in-sms">SMS</label>
+                                </div>
+                                <div class="form-group mt-25">
+                                  <button type="submit" class="btn btn-color upper">¡Enviar mensaje!<i class="fa fa-angle-right"></i></button>
+                                </div>
                                 <!-- Thank you or Error Text on form submission -->
                                 <div id="form-messages"></div>
                           </form>
