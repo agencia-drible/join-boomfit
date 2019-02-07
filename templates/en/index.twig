@@ -9,8 +9,8 @@
           <div class="slide-content">
             <div class="container">
               <h1 class="upper">Equip your<br>studio or gym!</h1>
-              <h4>Check out our payment facilities!</h4>
-              <p><a class="btn btn-light upper no-radius" href="#contacts" data-scroll="true">Know more!</a>
+              <h4>Personalized budgets to fit your needs</h4>
+              <p><a class="btn btn-light upper no-radius" href="#contacts" data-scroll="true">Find out more!</a>
               </p>
             </div>
           </div>
@@ -24,13 +24,13 @@
         <div class="col-md-8 col-md-offset-2">
           <div class="title text-center">
             <h6 class="colored-text">The lowest prices in europe</h6>
-            <h1>BOOMFIT - Nº1 FITNESS STORE!</h1>
+            <h1>Boomfit - Nº1 Fitness Store</h1>
             <hr>
           </div>
           <div class="section-content text-center">
-            <p class="fw-300 font-20">BoomFit is a brand of fitness equipment, with its own production that is committed to satisfy the needs of the Fitness market, we work with the most varied sports venues, such as Football Clubs, Gymnasiums, Schools, Studios ... among others. Dedication, dynamism and competence are some of the characteristics that make this the nº1 Fitness store in Europe!</p>
+            <p class="fw-300 font-20">Boomfit is a fitness equipment brand, with its own production, and it commits itself to satisfy the needs of the fitness market in the best possible way.<br>We work with the most varied sports spaces such as football clubs, gyms, schools, studios... among others. Dedication, dynamism, and competence are some of the characteristics that make us the Nº1 Fitness Store in Europe.</p>
             <p>
-              <center><a class="btn btn-light-intro upper no-radius" href="#contacts" data-scroll="true">Contacte-nos!</a></center>
+              <center><a class="btn btn-light-intro upper no-radius" href="#contacts" data-scroll="true">Talk to us!</a></center>
             </p>
           </div>
         </div>
@@ -42,29 +42,29 @@
       <div class="row row-flex">
         <div class="col-sm-4">
           <div class="column-inner with-padding">
-            <div class="icon-box align-center" data-animation="fadeInUp"><i class="hc-watch-alt"></i>
+            <div class="icon-box align-center" data-animation="fadeInUp"><i class="hc-euro-alt"></i>
               <div class="ib-content">
-                <h4 class="upper">Ease of payment!</h4>
-                <p class="fw-300">BoomFit BoomFit helps you realize your plans! Methods of payment to think of you! Made to measure!</p>
+                <h4 class="upper">GET YOUR BUDGET IN 24H!</h4>
+                <p class="fw-300">Boomfit helps you make your plans come true! Everything is adjusted to you!</p>
               </div>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="column-inner with-padding" data-custom-bg="rgba(0, 0, 0, 0.2)">
-            <div class="icon-box align-center" data-animation="fadeInUp" data-delay="300"><i class="hc-money"></i>
+            <div class="icon-box align-center" data-animation="fadeInUp" data-delay="300"><i class="hc-watch-alt"></i>
               <div class="ib-content">
-                <h4 class="upper">Deliveries in 48H!</h4>
-                <p class="fw-300">A team that works every day to get the equipment to you as soon as possible.</p>
+                <h4 class="upper">DELIVERIES IN 48H!</h4>
+                <p class="fw-300">A team that works every day to make sure the equipment gets t you in the fastest time.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="column-inner with-padding" data-custom-bg="rgba(0, 0, 0, 0.4)">
-            <div class="icon-box align-center" data-animation="fadeInUp" data-delay="600"><i class="hc-euro-alt"></i>
+            <div class="icon-box align-center" data-animation="fadeInUp" data-delay="600"><i class="fas fa-hand-holding-usd"></i>
               <div class="ib-content">
-                <h4 class="upper">Lowest price in Europe!</h4>
+                <h4 class="upper">LOWEST PRICES IN EUROPE!</h4>
                 <p class="fw-300">We guarantee the lowest prices allied to high quality products!</p>
               </div>
             </div>
@@ -76,7 +76,7 @@
   <section id="partners" class="portfolio">
     <div class="container">
       <div class="title text-center">
-        <h1>Partnership</h1>
+        <h1>Official partners</h1>
         <hr>
       </div>
     </div>
@@ -212,7 +212,7 @@
   <section id="clients">
     <div class="container">
       <div class="title text-center">
-        <h1>Customers</h1>
+        <h1>Clients</h1>
         <hr>
       </div>
       <div class="row pt-25 pb-25">
@@ -262,8 +262,8 @@
     <div class="container">
       <div class="col-md-5 col-sm-12">
         <div class="title text-center">
-          <h1>Ask for more information!</h1>
-          <h4 class="upper">Let's work together.</h4>
+          <h1>More information</h1>
+          <h4 class="upper">Let's work together</h4>
           <hr>
         </div>
         <div class="section-content">
@@ -282,7 +282,7 @@
           {% if craft.app.session.hasFlash('wheelformSuccess') %}
           <p class="message success text-center bg-danger text-white">Thank You! we will review your submission shortly.</p>
           {% elseif craft.app.session.hasFlash('wheelformError') %}
-          <p class="message error text-center  bg-danger text-white">Ocorreu um erro :(</p>
+          <p class="message error text-center  bg-danger text-white">An error has occurred</p>
           {% endif %}
 
           {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
@@ -293,28 +293,29 @@
             <input type="hidden" name="redirect" value="{{ '/en/#contacts'|hash }}">
 
             <!-- NOME -->
-            <input class="form-control" placeholder="Nome" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+            <input class="form-control" placeholder="Name" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
             {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
-
-            <!-- TELEMOVEL -->
-            <input class="form-control" placeholder="Mobile Phone" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
-            {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
 
             <!-- EMAIL -->
             <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}">
             {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
 
+            <!-- TELEMOVEL -->
+            <input class="form-control" placeholder="Phone" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
+            {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
+
             <!-- LOCALIDADE -->
-            <input class="form-control" placeholder="Local" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+            <input class="form-control" placeholder="Country" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
             {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
 
-            <!-- MENSAGEM -->              <textarea class="form-control" placeholder="Write here your message" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+            <!-- MENSAGEM -->
+            <textarea class="form-control" placeholder="Your message" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
             {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
 
             <!-- Consent -->
             <br>
-            <p class="consent-copy">Your data are duly referred to by World Fit Online Ltd., For commercial purposes, within 60 days of the validation of the promotion.</p>
-            <p class="consent-copy">I agree to contact the company World Fit Online, to send your information, offers and promotions, for 24 months or 24 months after the last contact, through:</p>
+            <p class="consent-copy">Your personal data will be processed by the World Fit Online Lda entity, for commercial purposes, up to 60 days after the validity of the promotion.</p>
+            <p class="consent-copy">I agree to be in contact with the company World Fit Online, to send information, offers, and promotions, for 24 months or 24 months after the last contact, through:</p>
 
             <!-- checkbox E-mail -->
             <div class="input checkbox">
@@ -331,7 +332,7 @@
                 </div>
 
               <!-- ENVIAR  -->
-              <input class="btn btn-color upper mt-25" type="submit" value="Enviar Mensagem!">
+              <input class="btn btn-color upper mt-25" type="submit" value="Send Message">
             </form>
             <!-- Thank you or Error Text on form submission -->
             <div id="form-messages"></div>
