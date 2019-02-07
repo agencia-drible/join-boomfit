@@ -268,7 +268,76 @@
                                 <hr>
                           </div>
                           <div class="section-content">
+                            <!--  -->
                             {% macro errorList(errors) %}
+                            {% if errors %}
+                            <ul class="errors">
+                              {% for error in errors %}
+                              <li>{{ error }}</li>
+                              {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {% endmacro %}
+                            {% from _self import errorList %}
+
+                            <!-- MENSAGENS  -->
+                            {% if craft.app.session.hasFlash('wheelformSuccess') %}
+                            <p class="message success text-center bg-danger text-white">¡Gracias! Revisaremos su presentación en breve.</p>
+                            {% elseif craft.app.session.hasFlash('wheelformError') %}
+                            <p class="message error text-center  bg-danger text-white">Ocorreu um erro :(</p>
+                            {% endif %}
+
+                            {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
+                            <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
+                              {{ csrfInput() }}
+                              <input type="hidden" name="action" value="wheelform/message/send">
+                              <input type="hidden" name="form_id" value="3">
+                              <input type="hidden" name="redirect" value="{{ '/es/#contacts'|hash }}">
+
+                              <!-- NOME -->
+                              <input class="form-control" placeholder="Nombre" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+                              {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
+
+                              <!-- TELEMOVEL -->
+                              <input class="form-control" placeholder="Móvil" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
+                              {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
+
+                              <!-- EMAIL -->
+                              <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}">
+                              {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
+
+                              <!-- LOCALIDADE -->
+                              <input class="form-control" placeholder="Lugar" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+                              {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
+
+                              <!-- MENSAGEM -->              <textarea class="form-control" placeholder="Escriba aquí su mensaje" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+                              {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
+
+                              <!-- Consent -->
+                              <br>
+                              <p class="consent-copy">Sus datos personales serán tratados por la entidad World Fit Online Lda, a efectos comerciales, hasta 60 días después de la validez de la promoción.</p>
+                              <p class="consent-copy">Estoy de acuerdo en contactar con la empresa World Fit Online, para enviar sus informaciones, ofertas y promociones, durante 24 meses o 24 meses después del último contacto, a través de:</p>
+
+                              <!-- checkbox E-mail -->
+                              <div class="input checkbox">
+                                <input type="hidden" name="field_7" value="{{ values['field_7'] ?? '0' }}">
+                                <label for="lead-opt-in-email">
+                                  <input type="checkbox" name="field_7" value="{{ values['field_7'] ?? '1' }}" id="lead-opt-in-email">EMAIL</label>
+                                </div>
+
+                                <!-- checkbox SMS -->
+                                <div class="input checkbox">
+                                  <input type="hidden" name="field_8" value="{{ values['field_8'] ?? '0' }}">
+                                  <label for="lead-opt-in-sms">
+                                    <input type="checkbox" name="field_8" value="{{ values['field_8'] ?? '1' }}" id="lead-opt-in-email">SMS</label>
+                                  </div>
+
+                                <!-- ENVIAR  -->
+                                <input class="btn btn-color upper mt-25" type="submit" value="Enviar Mensagem!">
+                              </form>
+                              <!--  -->
+                              <!--  -->
+                            <!-- {% macro errorList(errors) %}
                             {% if errors %}
                             <ul class="errors">
                               {% for error in errors %}
@@ -326,7 +395,7 @@
                                 </div>
                                 <div class="form-group mt-25">
                                   <button type="submit" class="btn btn-color upper">¡Enviar mensaje!<i class="fa fa-angle-right"></i></button>
-                                </div>
+                                </div> -->
                                 <!-- Thank you or Error Text on form submission -->
                                 <div id="form-messages"></div>
                           </form>
