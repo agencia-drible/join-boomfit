@@ -120,6 +120,16 @@ a:hover {
       }
 }
 
+@media (min-width: 641px) {
+    span.icon {display:none}
+    span.text {display:inline-block}
+}
+
+@media (max-width: 640px) {
+    span.icon {display:inline-block}
+    span.text {display:none}
+}
+
 .btn-color {
       color: #fff;
       background-color: #da1c37;
