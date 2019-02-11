@@ -24,7 +24,7 @@
   <div class="fixed-cta">
     <a href="https://www.boomfit.eu">
       <div>
-        <span class="text hidden-sm hidden-xs">VOLTAR Á LOJA</span>
+        <span class="hidden-sm hidden-xs">Voltar à loja</span>
         <span class="icon hidden-lg hidden-md"><i class="fas fa-shopping-basket"></i></span>
       </div>
     </a>
@@ -34,6 +34,11 @@
     <nav id="navbar">
       <div class="navbar-wrapper">
         <div class="container-fluid">
+          <div class="logo">
+            <a>
+            <img src="img/logoboom.png">
+          </a>
+          </div>
           <div class="menu-extras">
             <div class="menu-item">
               <div class="nav-toggle">
@@ -49,29 +54,29 @@
           </div>
           <div id="navigation">
             <ul class="navigation-menu nav">
-              <li class="">
-                <a href="#home" data-scroll="true">Início</a>
+              <li class="menu">
+                <a href="#home" data-scroll="true" class="">Início</a>
               </li>
-              <li class="">
-                <a href="#introduction" data-scroll="true">Introdução</a>
+              <li class="menu">
+                <a href="#introduction" data-scroll="true" class="">Introdução</a>
               </li>
-              <li class="">
-                <a href="#partners" data-scroll="true">Parcerias</a>
+              <li class="menu">
+                <a href="#partners" data-scroll="true" class="">Parcerias</a>
               </li>
-              <li class="">
-                <a href="#clients" data-scroll="true">Clientes</a>
+              <li class="menu">
+                <a href="#clients" data-scroll="true" class="">Clientes</a>
               </li>
-              <li class="">
-                <a href="#contacts" data-scroll="true">Contactos</a>
+              <li class="menu">
+                <a href="#contacts" data-scroll="true" class="">Contactos</a>
               </li>
               {% import "_macros.html" as macros %}
-              <li class="menu-item-has-children">
+              <li class="menu-item-has-children menu">
                 <a href="/pt" data-scroll="true">PT</a>
                 <ul class="submenu">
-                  <li>
+                  <li class="menu">
                     <a href="/es">ES</a>
                   </li>
-                  <li>
+                  <li class="menu">
                     <a href="/en">EN</a>
                   </li>
                 </ul>

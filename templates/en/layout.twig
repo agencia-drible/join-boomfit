@@ -24,7 +24,7 @@
   <div class="fixed-cta">
     <a href="https://www.boomfit.eu">
       <div>
-        <span class="text hidden-sm hidden-xs">VISIT WEBSITE</span>
+        <span class="title hidden-sm hidden-xs">Visit website</span>
         <span class="icon hidden-lg hidden-md"><i class="fas fa-shopping-basket"></i></span>
       </div>
     </a>
@@ -34,6 +34,11 @@
     <nav id="navbar">
       <div class="navbar-wrapper">
         <div class="container-fluid">
+          <div class="logo">
+            <a>
+            <img src="img/logoboom.png">
+          </a>
+          </div>
           <div class="menu-extras">
             <div class="menu-item">
               <div class="nav-toggle">
@@ -49,30 +54,30 @@
           </div>
           <div id="navigation">
             <ul class="navigation-menu nav">
-              <li class="">
+              <li class="menu">
                 <a href="#home" data-scroll="true">Start</a>
               </li>
-              <li class="">
+              <li class="menu">
                 <a href="#introduction" data-scroll="true">Introduction</a>
               </li>
-              <li class="">
-                <a href="#partners" data-scroll="true">Partnership</a>
+              <li class="menu">
+                <a href="#partners" data-scroll="true">Partners</a>
               </li>
-              <li class="">
-                <a href="#clients" data-scroll="true">Customers</a>
+              <li class="menu">
+                <a href="#clients" data-scroll="true">Clients</a>
               </li>
-              <li class="">
+              <li class="menu">
                 <a href="#contacts" data-scroll="true">Contacts</a>
               </li>
               {% import "_macros.html" as macros %}
-              <li class="menu-item-has-children">
+              <li class="menu-item-has-children menu">
                 <a href="/en" data-scroll="true">EN</a>
                 <ul class="submenu">
-                  <li>
-                    <a href="/es">ES</a>
-                  </li>
-                  <li>
+                  <li class="menu">
                     <a href="/pt">PT</a>
+                  </li>
+                  <li class="menu">
+                    <a href="/es">ES</a>
                   </li>
                 </ul>
               </li>
