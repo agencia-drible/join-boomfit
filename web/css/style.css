@@ -2508,7 +2508,7 @@ section.page-title .bp-desktop({
     top: 0;
     right: 0;
     left: 0;
-    height: 70px;
+    height: 80px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     background-color:#FFF;
     color:#000;
@@ -2527,7 +2527,7 @@ section.page-title .bp-desktop({
   }
   #navbar .logo > a {
     display: table-cell;
-    padding-top: 10px;
+    padding-top: 20px;
   }
   #navbar .logo img {
     max-height: 40px;
