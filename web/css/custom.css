@@ -186,13 +186,42 @@ section + section {
 }
 
 #hv {
-  margin-top: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
+ul.submenu li a{
+  color:#000 !important;
+  background-color: #fff;
+}
 .menu a:hover{
   color: #ffffff!important;
 }
 
 #navbar .navigation-menu > li.menu-item-has-children:hover > a {
   color: #fff;
+}
+
+.marg {
+  margin-top: 10px;
+}
+
+  @media only screen and (min-width: 768px) {
+
+    #hv {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .hgt {
+      height: 70px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+  #hv {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
