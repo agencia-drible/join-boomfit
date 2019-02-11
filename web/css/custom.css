@@ -224,4 +224,6 @@ ul.submenu li a{
     margin-top: auto;
     margin-bottom: auto;
   }
+  .hgt {
+    height: 50px;
 }
