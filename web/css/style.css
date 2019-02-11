@@ -2508,7 +2508,7 @@ section.page-title .bp-desktop({
     top: 0;
     right: 0;
     left: 0;
-    height: 80px;
+    height: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     background-color:#FFF;
     color:#000;
@@ -2518,7 +2518,7 @@ section.page-title .bp-desktop({
   }
   #navbar .logo {
     display: table;
-    height: 80px;
+    height: 60px;
     float: left;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
@@ -2527,8 +2527,9 @@ section.page-title .bp-desktop({
   }
   #navbar .logo > a {
     display: table-cell;
-    padding-top: 20px;
-  }
+    padding: 0px;
+    margin-top: 5px;
+    }
   #navbar .logo img {
     max-height: 40px;
     -webkit-transition: all .5s ease;
@@ -2866,7 +2867,7 @@ section.page-title .bp-desktop({
       top: 100%;
       left: 0;
       z-index: 1000;
-      padding: 15px 0;
+      padding: 0px;
       list-style: none;
       min-width: 200px;
       visibility: hidden;
