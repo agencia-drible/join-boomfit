@@ -867,7 +867,7 @@
     var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
-      icon: './img/marker.svg',
+      icon: '/img/marker.svg',
     });
 
     google.maps.event.addListener(marker, 'click', function() {
