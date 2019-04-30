@@ -20,7 +20,7 @@
           .section('topopersonal') %}
 
           {# Fetch the entries #}
-          {% set topopersonal = myEntryQuery.all() %}
+          {% set topopersonal = myEntryQuery.enabledForSite(true).all() %}
 
           {# Display the entries #}
           {% for personal in topopersonal %}
