@@ -20,7 +20,7 @@
           .section('topopersonal') %}
 
           {# Fetch the entries #}
-          {% set topopersonal = myEntryQuery.siteId(craft.app.sites.currentSite.id).all() %}
+          {% set topopersonal = myEntryQuery.all() %}
 
           {# Display the entries #}
           {% for personal in topopersonal %}
