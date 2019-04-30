@@ -17,10 +17,10 @@
     <div id="home-slider">
       <div class="slide-item">
        {% set myEntryQuery = craft.entries()
-          .section('topopersonal') %}
+          .siteId(craft.app.sites.currentSite.id).section('topopersonal') %}
 
           {# Fetch the entries #}
-          {% set topopersonal = myEntryQuery.enabledForSite(true).all() %}
+          {% set topopersonal = myEntryQuery.all() %}
 
           {# Display the entries #}
           {% for personal in topopersonal %}
