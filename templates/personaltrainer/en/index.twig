@@ -17,7 +17,8 @@
     <div id="home-slider">
       <div class="slide-item">
        {% set myEntryQuery = craft.entries()
-          .section('topopersonal') %}
+          .section('topopersonal')
+          .site('personaltrainerEn') %}
 
           {# Fetch the entries #}
           {% set topopersonal = myEntryQuery.all() %}
