@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <title>Boomfit » Fitness Equipment at the Best Price!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+    <link rel="stylesheet" href="/css/bundle2.css">
+    <link rel="stylesheet" href="/css/hody-icons2.css">
+    <link rel="stylesheet" href="/css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Source+Sans+Pro:300,400|Kaushan+Script|Lora|Playfair+Display:700" rel="stylesheet" type="text/css">
+  </head>
+
+  <style>
+
+
+  #navitem:hover{
+    background-color:#de002f !important;
+    height: 70px;
+    color:#fff !important;
+  }
+
+  a#linguagem{
+    height:70px !important;
+    margin-bottom:10px !important;
+  }
+
+  #linguagem:hover{
+    background-color:#de002f !important;
+    color:#fff !important;
+  }
+
+  #submenus:hover{
+    background-color:#de002f !important;
+    color:#fff !important;
+  }
+
+
+  #formulario{
+    margin-left:3.5%;
+  }
+  /* DROPDOWN DE LINGUAGENS  */
+
+
+
+  /* MEDIA QUERIES */
+
+  /* Most of the Smartphones Mobiles */
+
+  @media (min-width: 320px) and (max-width: 480px) {
+
+  #h1-home{font-size:4rem;}
+
+  #cartoes{
+    margin-top:-60px;
+    margin-left:5px;
+    padding-bottom:30px;
+  }
+
+  #navlogo{
+    margin-top:5px;
+  }
+
+  #formulario{
+    margin-left:0;
+  }
+
+  }
+
+  /* TABLET */
+  @media (min-width: 768px) and (max-width: 769px) {
+
+  #cartoes{
+  margin-top:-40px;
+  margin-left:8.5%;
+  }
+
+  #navlogo{
+    margin-top:5px;
+  }
+
+  #formulario{
+    margin-left:0;
+  }
+
+  }
+  /* LAPTOP DE 1024 */
+  @media (min-width:770px) and (max-width : 1025px) {
+
+    #cartoes{
+    margin-top:70px;
+  }
+
+  #formulario{
+    margin-left:3.5%
+  }
+
+  }
+  </style>
+
+  </head>
+  <body>
+    <div class="fixed-cta" id="iconcesta">
+     <a href="https://www.boomfit.eu">
+       <div>
+         <span class="text hidden-sm hidden-xs">Voltar à loja</span>
+         <span class="icon hidden-lg hidden-md"><i class="fas fa-shopping-basket"></i></span>
+       </div>
+     </a>
+   </div>
+
+      <!-- NAVBAR -->
+    <div id="wrapper">
+      <nav id="navbar">
+        <div class="navbar-wrapper">
+          <div class="container-fluid">
+             <div class="logo">
+              <a href="/pt">
+                <img class="" src="/img/logoboom.png" alt="" id="navlogo">
+              </a>
+            </div>
+            <div class="menu-extras">
+              <div class="menu-item">
+                <div class="nav-toggle">
+                  <a class="menu-toggle" href="#">
+                    <div class="hamburger">
+                      <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div id="navigation">
+              <ul class="navigation-menu nav float-right">
+                <li>
+                  <a href="http://personaltrainer.boomfit.tld/en" data-scroll="true" id="navitem">Personal Trainerss</a>
+                </li>
+                <li>
+                  <a href="http://studio.boomfit.tld/en" data-scroll="true" id="navitem">Studio</a>
+                </li>
+                {% import "_macros.html" as macros %}
+                <li class="menu-item-has-children">
+                  <a href="/en" data-scroll="true" id="linguagem">EN<span class="icon hidden-lg hidden-md"><i class="fas fa-angle-down" id="iconsubmenu"></i></span></a>
+                  <ul class="submenu" id="drop">
+                    <li>
+                      <a href="/es" id="submenus">ES</a>
+                    </li>
+                    <li>
+                      <a href="/pt" id="submenus">PT</a>
+                    </li>
+                    <li>
+                      <a href="/fr" id="submenus">FR</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- END NAVBAR -->
+
+    <section id="classes">
+      <div class="container">
+        <div class="section-content pt-25 pb-25">
+          <div class="row">
+            <div class="col-md-6">
+              <a href="http://studio.boomfit.tld/" target="_blank"><div class="image-box" data-animation="fadeInUp">
+                <img src="/images/foto1.jpg" alt="">
+                <div class="image-overlay">
+                  <div class="centrize">
+                    <div class="v-bottom">
+                      <div class="title mb-15">
+                        <h3>STUDIOS & GYMS!</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <a href="http://personaltrainer.boomfit.tld/" target="_blank"><div class="image-box" data-animation="fadeInUp">
+                <img src="/images/foto2.jpg" alt="" >
+                <div class="image-overlay">
+                  <div class="centrize">
+                    <div class="v-bottom">
+                      <div class="title mb-15">
+                        <h3>OFFICIAL BOOMFIT PT!</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="container">
+        <ul class="social-list text-center">
+          <li class="social-item-linkedin"><a target="_blank" href="https://www.linkedin.com/company/boom-fit/"><i class="hc-linkedin"></i></a>
+          </li>
+          <li class="social-item-facebook"><a target="_blank" href="https://www.facebook.com/boomfit.eu"><i class="hc-facebook"></i></a>
+          </li>
+          <li class="social-item-twitter"><a target="_blank" href="https://twitter.com/Boomfit_es"><i class="hc-twitter"></i></a>
+          </li>
+          <li class="social-item-instagram"><a target="_blank" href="https://www.instagram.com/boomfit.eu/"><i class="hc-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="container">
+        <center><img class="footer" src="/img/logofooter.png"></center>
+      </div>
+    </section>
+      </div>
+    </div>
+    <script type="text/javascript" src="/js/jquery2.js"></script>
+    <script type="text/javascript" src="/js/bundle2.js"></script>
+    <script type="text/javascript" src="/js/SmoothScroll2.js"></script>
+    <script type="text/javascript" src="/js/jquery.mb.YTPlayer2.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGOsBBZo9vf0Tw4w6aJiilSTFVfQ5GPI"></script>
+    <script type="text/javascript" src="/js/main2.js"></script>
+  </body>
+
+</html>
