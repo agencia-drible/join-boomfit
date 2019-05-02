@@ -1,4 +1,4 @@
-{% extends 'layout' %}
+{% extends 'personaltrainer/fr/layout' %}
 {% block main %}
 <!-- WHEEL FORM -->
 {% macro errorList(errors) %}
@@ -16,8 +16,9 @@
   <section id="home">
     <div id="home-slider">
       <div class="slide-item">
-       {% set myEntryQuery = craft.entries()
-          .section('topopersonal') %}
+      {% set myEntryQuery = craft.entries()
+        .section('topopersonal')
+        .site('personaltrainerFr') %}
 
           {# Fetch the entries #}
           {% set topopersonal = myEntryQuery.all() %}
@@ -49,10 +50,11 @@
         <!-- SECCAO DIREITA -->
          <div class="col-md-6 text-left mt-2">
           <h5 class="colored-text text-center">Nº1 Fitness Store</h5>
-          <h3 class="text-center">BOOMFIT OFICIAL PT - Vantagens Exclusivas</h3>
+          <h3 class="text-center">BOOMFIT OFFICIAL PT - Avantages exclusifs</h3>
           <br>
            {% set myEntryQuery = craft.entries()
-          .section('vantagenspersonal') %}
+          .section('vantagenspersonal')
+          .site('personaltrainerFr') %}
 
           {# Fetch the entries #}
           {% set vantagenspersonal = myEntryQuery.all() %}
@@ -76,8 +78,8 @@
             <div class="icon-box align-center" data-animation="fadeInUp"><i class="fas fa-check"></i>
               <div class="ib-content">
                 <br>
-                <h4 class="">Verified Reviews!</h4>
-                <p class="fw-300">Our equipments are tested and used by professionals.</p>
+                <h4 class="">Avis vérifiés!</h4>
+                <p class="fw-300">Nos équipements sont testés et utilisés par des professionnels.</p>
               </div>
             </div>
           </div>
@@ -87,8 +89,8 @@
             <div class="icon-box align-center" data-animation="fadeInUp" data-delay="300"><i class="fas fa-truck"></i>
               <div class="ib-content">
                 <br>
-                <h4 class="">Delivery in 48H!</h4>
-                <p class="fw-300">A team that works every day to get the equipment to you as soon as possible.</p>
+                <h4 class="">Livraison en 48h!</h4>
+                <p class="fw-300">Une équipe qui travaille tous les jours pour vous livrer le matériel dans les meilleurs délais.</p>
               </div>
             </div>
           </div>
@@ -98,8 +100,8 @@
             <div class="icon-box align-center" data-animation="fadeInUp" data-delay="600"><i class="fas fa-coins"></i>
               <div class="ib-content">
                 <br>
-                <h4 class="">The lowest price of the Europe!</h4>
-                <p class="fw-300">We guarantee the lowest prices allied to high quality products!</p>
+                <h4 class="">Le prix le plus bas de l'Europe!</h4>
+                <p class="fw-300">Nous garantissons les prix les plus bas alliés à des produits de haute qualité!</p>
               </div>
             </div>
           </div>
@@ -110,7 +112,7 @@
   <section id="partners" class="portfolio">
       <div class="container">
         <div class="title text-center">
-          <h1>Parcerias</h1>
+          <h1>Partenariats</h1>
           <hr>
         </div>
       </div>
@@ -121,7 +123,8 @@
         <div class="enable-animation four-col" id="works-grid">
 
         {% set myEntryQuery = craft.entries()
-          .section('parceriaspt') %}
+          .section('parceriaspt')
+          .site('personaltrainerFr') %}
 
           {# Fetch the entries #}
           {% set parceriaspt = myEntryQuery.all() %}
@@ -149,49 +152,7 @@
       </div>
     </div>
   </section>
-            </div><section id="partners" class="portfolio">
-    <div class="container">
-      <div class="title text-center">
-        <h1>Parcerias</h1>
-        <hr>
-      </div>
-    </div>
-  </section>
-  <section class="white-bg p-0">
-    <div class="container-fluid">
-      <div class="row pt-10 pb-10">
-          {% set myEntryQuery = craft.entries()
-            .section('parceriaspt') %}
 
-            {# Fetch the entries #}
-            {% set parceriaspt = myEntryQuery.all() %}
-
-            {# Display the entries #}
-            {% for parceria in parceriaspt %}
-        <div class="enable-animation four-col" id="works-grid">
-          <!-- IMAGEM 1 -->
-          <div class="work-item">
-            <div class="work-detail">
-              <a>
-                <img src={{parceria.fotopt.first().getUrl}} alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>{{parceria.nomePT}}</h3>
-                      <p>{{parceria.cargoPT}}</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              {% endfor %}
-            </div>
-          </div>
-
-          <!-- ==============================================================  -->
-        </div>
-      </div>
-    </div>
-  </section>
 
   <br>
   <br>
@@ -209,8 +170,8 @@
     <div class="container-fluid">
       <div class="col-md-5 col-sm-12" id="formulario">
         <div class="title text-center">
-          <h1 id="h1home">Ask for more information!</h1>
-          <h4 class="">Let's work together</h4>
+          <h1 id="h1home">Demander plus d'informations!</h1>
+          <h4 class="">Travaillons ensemble</h4>
           <hr>
         </div>
         <div class="section-content">
@@ -235,11 +196,11 @@
             <input type="hidden" name="redirect" value="{{ '/en/#contacts'|hash }}">
 
             <!-- NOME -->
-            <input class="form-control" placeholder="Name" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+            <input class="form-control" placeholder="Prénom" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
             {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
             <br>
             <!-- TELEMOVEL -->
-            <input class="form-control" placeholder="Mobile Phone" name="field_2" type="email" id="email" value="{{ values['field_2'] ?? '' }}">
+            <input class="form-control" placeholder="Téléphone Portable" name="field_2" type="email" id="email" value="{{ values['field_2'] ?? '' }}">
             {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
             <br>
             <!-- EMAIL -->
@@ -247,17 +208,17 @@
             {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
             <br>
             <!-- LOCALIDADE -->
-            <input class="form-control" placeholder="Location" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+            <input class="form-control" placeholder="Emplacement" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
             {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
             <br>
             <!-- MESNSAGEM -->
-            <textarea class="form-control" placeholder="Write here your message" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+            <textarea class="form-control" placeholder="Écrivez ici votre message" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
             {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
 
             <!-- INFORMACAO -->
             <br>
-            <p class="consent-copy">Your personal data will be processed by the entity World Fit Online Lda, for commercial purposes, up to 60 days after the validity of the promotion.</p>
-            <p class="consent-copy">I agree to be contacted by the entity World Fit Online Lda, for sending your information, offers and promotions, for 24 months or 24 months after last contact, through:</p>
+            <p class="consent-copy">Vos données personnelles seront traitées par l'entité World Fit Online Lda, à des fins commerciales, jusqu'à 60 jours après la validité de la promotion.</p>
+            <p class="consent-copy">J'accepte d'être contacté par l'entité World Fit Online Lda, pour l'envoi de vos informations, offres et promotions, pendant 24 mois ou 24 mois après le dernier contact, via:</p>
             <!-- CHECKBOXS -->
             <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
             <br>
@@ -265,7 +226,7 @@
             <br>
             <br>
             <!-- ENVIAR  -->
-            <input class="btn btn-light-intro no-radius" type="submit" value="Send Message!" id="btnmensagem">
+            <input class="btn btn-light-intro no-radius" type="submit" value="Envoyer le message!" id="btnmensagem">
           </form>
           <!-- ==================================================== -->
           <div id="form-messages"></div>
@@ -282,7 +243,7 @@
         <div class="column-inner with-padding white-bg">
           <div class="icon-box align-center"><i class="hc-pin"></i>
             <div class="ib-content">
-              <h3>Address</h3>
+              <h3>Adresse</h3>
               <p>Rua do Progresso nº29 <br>4780-841 Vilarinho das Cambas,<br> Vila Nova de Famalicão</p>
             </div>
           </div>

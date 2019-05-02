@@ -1,4 +1,4 @@
-{% extends 'layout' %}
+{% extends 'personaltrainer/es/layout' %}
 {% block main %}
 <!-- WHEEL FORM -->
 {% macro errorList(errors) %}
@@ -16,8 +16,9 @@
   <section id="home">
     <div id="home-slider">
       <div class="slide-item">
-       {% set myEntryQuery = craft.entries()
-          .section('topopersonal') %}
+      {% set myEntryQuery = craft.entries()
+        .section('topopersonal')
+        .site('personaltrainerEs') %}
 
           {# Fetch the entries #}
           {% set topopersonal = myEntryQuery.all() %}
@@ -49,10 +50,11 @@
         <!-- SECCAO DIREITA -->
          <div class="col-md-6 text-left mt-2">
           <h5 class="colored-text text-center">Nº1 Fitness Store</h5>
-          <h3 class="text-center">BOOMFIT OFICIAL PT - Vantagens Exclusivas</h3>
+          <h3 class="text-center">BOOMFIT OFICIAL PT - Ventajas exclusivas</h3>
           <br>
            {% set myEntryQuery = craft.entries()
-          .section('vantagenspersonal') %}
+          .section('vantagenspersonal')
+          .site('personaltrainerEs') %}
 
           {# Fetch the entries #}
           {% set vantagenspersonal = myEntryQuery.all() %}
@@ -121,7 +123,8 @@
         <div class="enable-animation four-col" id="works-grid">
 
         {% set myEntryQuery = craft.entries()
-          .section('parceriaspt') %}
+          .section('parceriaspt')
+          .site('personaltrainerEs') %}
 
           {# Fetch the entries #}
           {% set parceriaspt = myEntryQuery.all() %}

@@ -1,11 +1,12 @@
-{% extends 'layout' %}
+{% extends 'studio/en/layout' %}
 {% block main %}
 <body>
   <section id="home">
     <div id="home-slider">
       <div class="slide-item">
-       {% set myEntryQuery = craft.entries()
-          .section('topostudio') %}
+      {% set myEntryQuery = craft.entries()
+        .section('topostudio')
+        .site('studioEn') %}
 
           {# Fetch the entries #}
           {% set topostudio = myEntryQuery.all() %}
@@ -37,7 +38,8 @@
           </div>
           <div class="section-content text-center">
            {% set myEntryQuery = craft.entries()
-          .section('apresentacaostudio') %}
+          .section('apresentacaostudio')
+          .site('studioEn') %}
 
           {# Fetch the entries #}
           {% set apresentacaostudio = myEntryQuery.all() %}
@@ -47,7 +49,7 @@
             <p class="fw-300 font-20">{{apresentacao.apresentacaostudio}}</p>
             {% endfor %}
               <p>
-                <center><a class="btn btn-light-intro no-radius" href="#contacts" data-scroll="true">Contacte-nos!</a></center>
+                <center><a class="btn btn-light-intro no-radius" href="#contacts" data-scroll="true">Contact us!</a></center>
               </p>
             </div>
           </div>
@@ -93,7 +95,7 @@
 <section id="partners" class="portfolio">
     <div class="container">
       <div class="title text-center">
-        <h1>Socios oficiales</h1>
+        <h1>Partnerships</h1>
         <hr>
       </div>
     </div>
@@ -104,7 +106,8 @@
         <div class="enable-animation four-col" id="works-grid">
 
         {% set myEntryQuery = craft.entries()
-          .section('parcerias') %}
+          .section('parcerias')
+          .site('studioEn') %}
 
           {# Fetch the entries #}
           {% set parcerias = myEntryQuery.all() %}
@@ -135,13 +138,14 @@
   <section id="clients">
     <div class="container">
       <div class="title text-center">
-        <h1>Clientes</h1>
+        <h1>Clients</h1>
         <hr>
       </div>
       <div class="row pt-25 pb-25">
         <div class="client-carousel carousel" data-slick="{&quot;slidesToShow&quot;: 6, &quot;dots&quot;: false}">
            {% set myEntryQuery = craft.entries()
-          .section('clientesstudio') %}
+          .section('clientesstudio')
+          .site('studioEn') %}
 
           {# Fetch the entries #}
           {% set clientesstudio = myEntryQuery.all() %}
@@ -169,8 +173,8 @@
     <div class="container-fluid">
         <div class="col-md-5 col-sm-12" id="formulario">
           <div class="title text-center">
-            <h1 id="h1home">Solicite mais informações!</h1>
-            <h4 class="">Vamos trabalhar juntos.</h4>
+            <h1 id="h1home">Ask for more information!</h1>
+            <h4 class="">Let's work together.</h4>
             <hr>
           </div>
           <div class="section-content">
@@ -195,11 +199,11 @@
               <input type="hidden" name="redirect" value="{{ '/pt/#contacts'|hash }}">
 
               <!-- NOME -->
-              <input class="form-control" placeholder="Nome" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+              <input class="form-control" placeholder="Name" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
               {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
               <br>
               <!-- TELEMOVEL -->
-              <input class="form-control" placeholder="Telemóvel" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
+              <input class="form-control" placeholder="Mobile Phone" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
               {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
               <br>
               <!-- EMAIL -->
@@ -207,17 +211,17 @@
               {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
               <br>
               <!-- LOCALIDADE -->
-              <input class="form-control" placeholder="Localidade" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+              <input class="form-control" placeholder="Location" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
               {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
               <br>
               <!-- MESNSAGEM -->
-              <textarea class="form-control" placeholder="Escreve aqui a sua mensagem" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+              <textarea class="form-control" placeholder="Write here your message" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
               {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
 
               <!-- INFORMACAO -->
               <br>
-              <p class="consent-copy">Os seus dados pessoais serão tratados, pela entidade World Fit Online Lda, para efeitos comerciais, até 60 dias após a validade da promoção.</p>
-              <p class="consent-copy">Concordo ser contactado pela entidade World Fit Online Lda, para envio das suas informações, ofertas e promoções, durante 24 meses ou 24 meses após último contacto, através de:</p>
+              <p class="consent-copy">Your personal data will be processed by the entity World Fit Online Lda, for commercial purposes, up to 60 days after the validity of the promotion.</p>
+              <p class="consent-copy">I agree to be contacted by the entity World Fit Online Lda, for sending your information, offers and promotions, for 24 months or 24 months after last contact, through:</p>
               <!-- CHECKBOXS -->
               <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
               <br>
@@ -225,7 +229,7 @@
               <br>
               <br>
               <!-- ENVIAR  -->
-              <input class="btn btn-light-intro no-radius" type="submit" value="Enviar Mensagem!" id="btnmensagem">
+              <input class="btn btn-light-intro no-radius" type="submit" value="Send Message!" id="btnmensagem">
             </form>
             <!-- ==================================================== -->
             <div id="form-messages"></div>
@@ -242,7 +246,7 @@
         <div class="column-inner with-padding white-bg">
           <div class="icon-box align-center"><i class="hc-pin"></i>
             <div class="ib-content">
-              <h3>Morada</h3>
+              <h3>Address</h3>
               <p>Rua do Progresso nº29 <br>4780-841 Vilarinho das Cambas,<br> Vila Nova de Famalicão</p>
             </div>
           </div>
@@ -262,7 +266,7 @@
         <div class="column-inner with-padding dark-bg">
           <div class="icon-box align-center"><i class="hc-phone-portrait"></i>
             <div class="ib-content">
-              <h3>Contactos</h3>
+              <h3>Contact</h3>
               <p>+351 918 601 806</p>
             </div>
           </div>
