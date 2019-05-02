@@ -1,0 +1,12 @@
+/.env
+/.idea
+/vendor
+/.git
+/config
+/.env.example
+/.gitignore
+/composer.json
+/composer.lock
+/craft
+/craft.bat
+.DS_Store
