@@ -1,11 +1,12 @@
-{% extends 'layout' %}
+{% extends 'studio/es/layout' %}
 {% block main %}
 <body>
   <section id="home">
     <div id="home-slider">
       <div class="slide-item">
        {% set myEntryQuery = craft.entries()
-          .section('topostudio') %}
+          .section('topostudio')
+           .site('studioEs') %}
 
           {# Fetch the entries #}
           {% set topostudio = myEntryQuery.all() %}
@@ -37,7 +38,8 @@
           </div>
           <div class="section-content text-center">
            {% set myEntryQuery = craft.entries()
-          .section('apresentacaostudio') %}
+          .section('apresentacaostudio')
+          .site('studioEs') %}
 
           {# Fetch the entries #}
           {% set apresentacaostudio = myEntryQuery.all() %}
@@ -47,7 +49,7 @@
             <p class="fw-300 font-20">{{apresentacao.apresentacaostudio}}</p>
             {% endfor %}
               <p>
-                <center><a class="btn btn-light-intro no-radius" href="#contacts" data-scroll="true">Contacte-nos!</a></center>
+                <center><a class="btn btn-light-intro no-radius" href="#contacts" data-scroll="true">contáctenos!</a></center>
               </p>
             </div>
           </div>
@@ -94,7 +96,7 @@
 <section id="partners" class="portfolio">
     <div class="container">
       <div class="title text-center">
-        <h1>Socios oficiales</h1>
+        <h1>Asociaciones</h1>
         <hr>
       </div>
     </div>
@@ -105,7 +107,8 @@
         <div class="enable-animation four-col" id="works-grid">
 
         {% set myEntryQuery = craft.entries()
-          .section('parcerias') %}
+          .section('parcerias')
+          .site('studioEs') %}
 
           {# Fetch the entries #}
           {% set parcerias = myEntryQuery.all() %}
@@ -142,7 +145,8 @@
       <div class="row pt-25 pb-25">
         <div class="client-carousel carousel" data-slick="{&quot;slidesToShow&quot;: 6, &quot;dots&quot;: false}">
            {% set myEntryQuery = craft.entries()
-          .section('clientesstudio') %}
+          .section('clientesstudio')
+          .site('studioEs') %}
 
           {# Fetch the entries #}
           {% set clientesstudio = myEntryQuery.all() %}
@@ -170,8 +174,8 @@
     <div class="container-fluid">
         <div class="col-md-5 col-sm-12" id="formulario">
           <div class="title text-center">
-            <h1 id="h1home">Solicite mais informações!</h1>
-            <h4 class="">Vamos trabalhar juntos.</h4>
+            <h1 id="h1home">¡Solicite más información!</h1>
+            <h4 class="">Vamos a trabajar juntos.</h4>
             <hr>
           </div>
           <div class="section-content">
@@ -192,33 +196,33 @@
             <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
               {{ csrfInput() }}
               <input type="hidden" name="action" value="wheelform/message/send">
-              <input type="hidden" name="form_id" value="2">
-              <input type="hidden" name="redirect" value="{{ '/pt/#contacts'|hash }}">
+              <input type="hidden" name="form_id" value="1">
+              <input type="hidden" name="redirect" value="{{ '/es/#contacts'|hash }}">
 
               <!-- NOME -->
-              <input class="form-control" placeholder="Nome" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}" required>
+              <input class="form-control" placeholder="Nombre" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
               {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
               <br>
               <!-- TELEMOVEL -->
-              <input class="form-control" placeholder="Telemóvel" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}" required>
+              <input class="form-control" placeholder="Móvil" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
               {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
               <br>
               <!-- EMAIL -->
-              <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}" required>
+              <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}">
               {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
               <br>
               <!-- LOCALIDADE -->
-              <input class="form-control" placeholder="Localidade" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}" required>
+              <input class="form-control" placeholder="Lugar" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
               {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
               <br>
               <!-- MESNSAGEM -->
-              <textarea class="form-control" placeholder="Escreve aqui a sua mensagem" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+              <textarea class="form-control" placeholder="Escribe aquí tu mensaje" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
               {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
 
               <!-- INFORMACAO -->
               <br>
-              <p class="consent-copy">Os seus dados pessoais serão tratados, pela entidade World Fit Online Lda, para efeitos comerciais, até 60 dias após a validade da promoção.</p>
-              <p class="consent-copy">Concordo ser contactado pela entidade World Fit Online Lda, para envio das suas informações, ofertas e promoções, durante 24 meses ou 24 meses após último contacto, através de:</p>
+              <p class="consent-copy">Sus datos personales serán tratados por la entidad World Fit Online Lda, a efectos comerciales, hasta 60 días después de la validez de la promoción.</p>
+              <p class="consent-copy">Estoy de acuerdo en contactar con la empresa World Fit Online, para enviar sus informaciones, ofertas y promociones, durante 24 meses o 24 meses después del último contacto, a través de:</p>
               <!-- CHECKBOXS -->
               <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
               <br>
@@ -226,7 +230,7 @@
               <br>
               <br>
               <!-- ENVIAR  -->
-              <input class="btn btn-light-intro no-radius" type="submit" value="Enviar Mensagem!" id="btnmensagem">
+              <input class="btn btn-light-intro no-radius" type="submit" value="Enviar Mensaje!" id="btnmensagem">
             </form>
             <!-- ==================================================== -->
             <div id="form-messages"></div>
@@ -243,7 +247,7 @@
         <div class="column-inner with-padding white-bg">
           <div class="icon-box align-center"><i class="hc-pin"></i>
             <div class="ib-content">
-              <h3>Morada</h3>
+              <h3>Dirección</h3>
               <p>Rua do Progresso nº29 <br>4780-841 Vilarinho das Cambas,<br> Vila Nova de Famalicão</p>
             </div>
           </div>
@@ -274,4 +278,3 @@
 </section>
 </body>
 {% endblock %}
-

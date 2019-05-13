@@ -1,11 +1,12 @@
-{% extends 'layout' %}
+{% extends 'studio/fr/layout' %}
 {% block main %}
 <body>
   <section id="home">
     <div id="home-slider">
       <div class="slide-item">
        {% set myEntryQuery = craft.entries()
-          .section('topostudio') %}
+          .section('topostudio')
+          .site('studioFr') %}
 
           {# Fetch the entries #}
           {% set topostudio = myEntryQuery.all() %}
@@ -37,7 +38,8 @@
           </div>
           <div class="section-content text-center">
            {% set myEntryQuery = craft.entries()
-          .section('apresentacaostudio') %}
+          .section('apresentacaostudio')
+          .site('studioFr') %}
 
           {# Fetch the entries #}
           {% set apresentacaostudio = myEntryQuery.all() %}
@@ -47,7 +49,7 @@
             <p class="fw-300 font-20">{{apresentacao.apresentacaostudio}}</p>
             {% endfor %}
               <p>
-                <center><a class="btn btn-light-intro no-radius" href="#contacts" data-scroll="true">Contacte-nos!</a></center>
+                <center><a class="btn btn-light-intro no-radius" href="#contacts" data-scroll="true">contactez nous!</a></center>
               </p>
             </div>
           </div>
@@ -61,8 +63,8 @@
           <div class="column-inner with-padding">
             <div class="icon-box align-center" data-animation="fadeInUp"><i class="hc-euro-alt"></i>
               <div class="ib-content">
-                <h4 >GET YOUR BUDGET IN 24H!</h4>
-                <p class="fw-300">Boomfit helps you make your plans come true! Everything is adjusted to you!</p>
+                <h4 >OBTENEZ VOTRE BUDGET EN 24H!</h4>
+                <p class="fw-300">Boomfit vous aide à réaliser vos projets! Tout est ajusté à vous!</p>
               </div>
             </div>
           </div>
@@ -71,8 +73,8 @@
           <div class="column-inner with-padding" data-custom-bg="rgba(0, 0, 0, 0.2)">
             <div class="icon-box align-center" data-animation="fadeInUp" data-delay="300"><i class="fas fa-truck"></i>
               <div class="ib-content">
-                <h4 >DELIVERIES IN 48H!</h4>
-                <p class="fw-300">A team that works every day to make sure the equipment gets to you in the fastest time.</p>
+                <h4 >LIVRAISONS EN 48H!</h4>
+                <p class="fw-300">L’équipe qui travaille tous les jours pour que l’équipement vous permette de remporter le temps le plus rapide.</p>
               </div>
             </div>
           </div>
@@ -81,8 +83,8 @@
           <div class="column-inner with-padding" data-custom-bg="rgba(0, 0, 0, 0.4)">
             <div class="icon-box align-center" data-animation="fadeInUp" data-delay="600"><i class="fas fa-coins"></i>
               <div class="ib-content">
-                <h4 >LOWEST PRICES IN EUROPE!</h4>
-                <p class="fw-300">We guarantee the lowest prices allied to high quality products!</p>
+                <h4 >PRIX LES PLUS BAS EN EUROPE!</h4>
+                <p class="fw-300">Nous garantissons les prix les plus bas alliés à des produits de haute qualité!</p>
               </div>
             </div>
           </div>
@@ -93,7 +95,7 @@
  <section id="partners" class="portfolio">
     <div class="container">
       <div class="title text-center">
-        <h1>Socios oficiales</h1>
+        <h1>Partenariats</h1>
         <hr>
       </div>
     </div>
@@ -104,7 +106,8 @@
         <div class="enable-animation four-col" id="works-grid">
 
         {% set myEntryQuery = craft.entries()
-          .section('parcerias') %}
+          .section('parcerias')
+          .site('studioFr') %}
 
           {# Fetch the entries #}
           {% set parcerias = myEntryQuery.all() %}
@@ -135,13 +138,14 @@
   <section id="clients">
     <div class="container">
       <div class="title text-center">
-        <h1>Clientes</h1>
+        <h1>Les Clients</h1>
         <hr>
       </div>
       <div class="row pt-25 pb-25">
         <div class="client-carousel carousel" data-slick="{&quot;slidesToShow&quot;: 6, &quot;dots&quot;: false}">
            {% set myEntryQuery = craft.entries()
-          .section('clientesstudio') %}
+          .section('clientesstudio')
+          .site('studioFr') %}
 
           {# Fetch the entries #}
           {% set clientesstudio = myEntryQuery.all() %}
@@ -169,8 +173,8 @@
     <div class="container-fluid">
         <div class="col-md-5 col-sm-12" id="formulario">
           <div class="title text-center">
-            <h1 id="h1home">Solicite mais informações!</h1>
-            <h4 class="">Vamos trabalhar juntos.</h4>
+            <h1 id="h1home">Demander plus d'informations!</h1>
+            <h4 class="">Travaillons ensemble.</h4>
             <hr>
           </div>
           <div class="section-content">
@@ -191,33 +195,33 @@
             <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
               {{ csrfInput() }}
               <input type="hidden" name="action" value="wheelform/message/send">
-              <input type="hidden" name="form_id" value="2">
-              <input type="hidden" name="redirect" value="{{ '/pt/#contacts'|hash }}">
+              <input type="hidden" name="form_id" value="1">
+              <input type="hidden" name="redirect" value="{{ '/fr/#contacts'|hash }}">
 
               <!-- NOME -->
-              <input class="form-control" placeholder="Nome" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}" required>
+              <input class="form-control" placeholder="Prénom" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
               {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
               <br>
               <!-- TELEMOVEL -->
-              <input class="form-control" placeholder="Telemóvel" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}" required>
+              <input class="form-control" placeholder="Téléphone Portable" name="field_3" type="email" id="email" value="{{ values['field_3'] ?? '' }}">
               {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
               <br>
               <!-- EMAIL -->
-              <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}" required>
+              <input class="form-control" placeholder="Email" name="field_2" type="text" id="phone-number" value="{{ values['field_2'] ?? '' }}">
               {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
               <br>
               <!-- LOCALIDADE -->
-              <input class="form-control" placeholder="Localidade" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}" required>
+              <input class="form-control" placeholder="Emplacement" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
               {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
               <br>
               <!-- MESNSAGEM -->
-              <textarea class="form-control" placeholder="Escreve aqui a sua mensagem" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
+              <textarea class="form-control" placeholder="Écrivez ici votre message" name="field_5" id="custom-data">{{ values['field_5'] ?? '' }}</textarea>
               {{ wheelformErrors['field_5'] is defined ? errorList(wheelformErrors['field_5']) }}
 
               <!-- INFORMACAO -->
               <br>
-              <p class="consent-copy">Os seus dados pessoais serão tratados, pela entidade World Fit Online Lda, para efeitos comerciais, até 60 dias após a validade da promoção.</p>
-              <p class="consent-copy">Concordo ser contactado pela entidade World Fit Online Lda, para envio das suas informações, ofertas e promoções, durante 24 meses ou 24 meses após último contacto, através de:</p>
+              <p class="consent-copy">Vos données personnelles seront traitées par l'entité World Fit Online Lda, à des fins commerciales, jusqu'à 60 jours après la validité de la promotion.</p>
+              <p class="consent-copy">J'accepte d'être contacté par l'entité World Fit Online Lda, pour l'envoi de vos informations, offres et promotions, pendant 24 mois ou 24 mois après le dernier contact, via:</p>
               <!-- CHECKBOXS -->
               <label><input type="checkbox" name="field_6" value="EMAIL">EMAIL</label>
               <br>
@@ -225,7 +229,7 @@
               <br>
               <br>
               <!-- ENVIAR  -->
-              <input class="btn btn-light-intro no-radius" type="submit" value="Enviar Mensagem!" id="btnmensagem">
+              <input class="btn btn-light-intro no-radius" type="submit" value="Envoyer le message!" id="btnmensagem">
             </form>
             <!-- ==================================================== -->
             <div id="form-messages"></div>
@@ -242,7 +246,7 @@
         <div class="column-inner with-padding white-bg">
           <div class="icon-box align-center"><i class="hc-pin"></i>
             <div class="ib-content">
-              <h3>Morada</h3>
+              <h3>Adresse</h3>
               <p>Rua do Progresso nº29 <br>4780-841 Vilarinho das Cambas,<br> Vila Nova de Famalicão</p>
             </div>
           </div>
@@ -262,7 +266,7 @@
         <div class="column-inner with-padding dark-bg">
           <div class="icon-box align-center"><i class="hc-phone-portrait"></i>
             <div class="ib-content">
-              <h3>Contactos</h3>
+              <h3>Contact</h3>
               <p>+351 918 601 806</p>
             </div>
           </div>
@@ -273,4 +277,3 @@
 </section>
 </body>
 {% endblock %}
-

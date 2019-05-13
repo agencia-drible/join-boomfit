@@ -50,10 +50,11 @@
         <!-- SECCAO DIREITA -->
          <div class="col-md-6 text-left mt-2">
           <h5 class="colored-text text-center">Nº1 Fitness Store</h5>
-          <h3 class="text-center">BOOMFIT OFICIAL PT - Vantagens Exclusivas</h3>
+          <h3 class="text-center">BOOMFIT OFICIAL PT - Exclusive Benefits</h3>
           <br>
            {% set myEntryQuery = craft.entries()
-          .section('vantagenspersonal') %}
+          .section('vantagenspersonal')
+          .site('personaltrainerEn') %}
 
           {# Fetch the entries #}
           {% set vantagenspersonal = myEntryQuery.all() %}
@@ -122,7 +123,8 @@
         <div class="enable-animation four-col" id="works-grid">
 
         {% set myEntryQuery = craft.entries()
-          .section('parceriaspt') %}
+          .section('parceriaspt')
+          .site('personaltrainerEn') %}
 
           {# Fetch the entries #}
           {% set parceriaspt = myEntryQuery.all() %}
@@ -189,7 +191,7 @@
           <form method="post" action="" accept-charset="UTF-8" novalidate="" enctype="multipart/form-data">
             {{ csrfInput() }}
             <input type="hidden" name="action" value="wheelform/message/send">
-            <input type="hidden" name="form_id" value="6">
+            <input type="hidden" name="form_id" value="1">
             <input type="hidden" name="redirect" value="{{ '/en/#contacts'|hash }}">
 
             <!-- NOME -->
