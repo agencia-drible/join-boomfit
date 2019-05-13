@@ -193,19 +193,19 @@
             <input type="hidden" name="redirect" value="{{ '/es/#contacts'|hash }}">
 
             <!-- NOME -->
-            <input class="form-control" placeholder="Nombre" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}">
+            <input class="form-control" placeholder="Nombre" name="field_1" type="text" id="name" value="{{ values['field_1'] ?? '' }}" required>
             {{ wheelformErrors['field_1'] is defined ? errorList(wheelformErrors['field_1']) }}
             <br>
             <!-- TELEMOVEL -->
-            <input class="form-control" placeholder="Móvil" name="field_2" type="email" id="email" value="{{ values['field_2'] ?? '' }}">
+            <input class="form-control" placeholder="Móvil" name="field_2" type="email" id="email" value="{{ values['field_2'] ?? '' }}" required>
             {{ wheelformErrors['field_2'] is defined ? errorList(wheelformErrors['field_2']) }}
             <br>
             <!-- EMAIL -->
-            <input class="form-control" placeholder="Email" name="field_3" type="text" id="phone-number" value="{{ values['field_3'] ?? '' }}">
+            <input class="form-control" placeholder="Email" name="field_3" type="text" id="phone-number" value="{{ values['field_3'] ?? '' }}" required>
             {{ wheelformErrors['field_3'] is defined ? errorList(wheelformErrors['field_3']) }}
             <br>
             <!-- LOCALIDADE -->
-            <input class="form-control" placeholder="Lugar" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}">
+            <input class="form-control" placeholder="Lugar" name="field_4" type="text" id="city-id" value="{{ values['field_4'] ?? '' }}" required>
             {{ wheelformErrors['field_4'] is defined ? errorList(wheelformErrors['field_4']) }}
             <br>
             <!-- MESNSAGEM -->
